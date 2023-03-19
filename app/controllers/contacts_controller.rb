@@ -32,5 +32,10 @@ def update
     # sad path
     render json: { errors: contact.errors.full_messages }, status: :unprocessable_entity
   end
-  
+
+  def destroy
+    contact = Contact.find_by(id: params[:id])
+    contact.destroy
+    render json: { message: "Contact Removed" }
+  end
 end
