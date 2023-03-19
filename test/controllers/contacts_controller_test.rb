@@ -11,4 +11,12 @@ class ContactsControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal Contact.count, data.length
   end
+
+  test "show" do
+    get "/contacts/#{Contact.first.id}.json"
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal ["name", "email", "phone_number", "created_at", "updated_at"], data.keys
+  end
 end

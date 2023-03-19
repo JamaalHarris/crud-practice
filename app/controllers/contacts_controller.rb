@@ -11,3 +11,9 @@ def create
     email: params[:email],
     phone_number: params[:phone_number]
   )
+end
+
+def show
+  @contacts = Contact.find_by(id: name)
+  render template: "contacts/show"
+end
