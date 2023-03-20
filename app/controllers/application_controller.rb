@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
   class ApplicationController < ActionController::Base
-    +   protect_from_forgery with: :exception, unless: -> { request.format.json? }
-      end
+    protect_from_forgery with: :exception, unless: -> { request.format.json? }
+  end
 end

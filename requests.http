@@ -1,0 +1,5 @@
+### Contacts Index
+GET http://localhost:3000/contacts.json 
+
+### Contacts Show
+GET http://localhost:3000/contacts/1.json
